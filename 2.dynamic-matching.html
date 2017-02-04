@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动态路由匹配</title>
+</head>
+
+<body>
+    我们经常需要把某种模式匹配到的所有路由，全都映射到同个组件。例如，我们有一个 User 组件，对于所有 ID 各不相同的用户，都要使用这个组件来渲染。
+    <div id="app">
+        <p>
+            <router-link to="/user/foo">/user/foo</router-link>
+            <router-link to="/user/bar">/user/bar</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.1.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.2.0/vue-router.min.js"></script>
+    <script src="2.App.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+主要是练习[vue-router](http://router.vuejs.org/zh-cn/)的Demo。
