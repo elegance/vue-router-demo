@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>命名视图</title>
+</head>
+<body>
+    <p>
+        有时候想同时（同级）展示多个视图，而不是嵌套展示，例如创建一个布局，有 sidebar（侧导航） 和 main（主内容） 两个视图，这个时候命名视图就派上用场了。
+        你可以在界面中拥有多个单独命名的视图，而不是只有一个单独的出口。
+        如果 router-view 没有设置名字，那么默认为 default。
+    </p>
+    <div id="app">
+        <h1>Named views</h1>
+        <ul>
+            <li>
+                <router-link to="/">/</router-link>
+            </li>
+            <li>
+                <router-link to="/other">/other</router-link>
+            </li>
+        </ul>
+        <router-view></router-view>
+        <router-view name="a"></router-view>
+        <router-view name="b"></router-view>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.1.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.2.0/vue-router.min.js"></script>
+    <script src="6.App.js"></script>
+</body>
+</html>
