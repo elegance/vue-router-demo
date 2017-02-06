@@ -4,16 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <title>编程式的导航</title>
+    <style>
+        table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            overflow: auto;
+        }
+        
+        table tr {
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+        
+        table th {
+            font-weight: 700;
+        }
+        
+        table tr {
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+        
+        table td,
+        table th {
+            padding: 6px 13px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app">
-        <p>
-            <router-link to="/user/foo">/user/foo</router-link>
-            <router-link to="/user/bar">/user/bar</router-link>
-        </p>
-        <router-view></router-view>
-    </div>
+    <p>
+        除了使用 router-link 来创建a标签来定义导航链接，还可以借助router的实例方法，通过编写代码来实现。
+        <ol>
+            <li>
+                <h2>router.push(location)</h2>
+                <p>
+                    想要导航到不同的URL，则使用 router.push方法，这个方法会向history栈添加一个新的记录，所以当用户点击浏览器后退按钮时，则回到之前的URL。
+                </p>
+                <p>
+                    当你点击router-link时，这个方法会在内部调用，所以说，点击router-link to="..."等同于调用router.push(...)
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>声明式</th>
+                            <th>编程式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;router-link :to="..."&gt;</code></td>
+                            <td><code>router.push(...)</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <h2>router.replace(location)</h2>
+                <p>
+                    跟router.push很像，唯一不同的是它不会向history中添加新记录。
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>声明式</th>
+                            <th>编程式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;router-link :to="..." replace&gt;</code></td>
+                            <td><code>router.replace(...)</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <h2>router.go(n)</h2>
+                <p>
+                    这个方法的参数是一个整数，意思是history记录中向前或者后退多少步。类似window.history.go(n)。
+                </p>
+            </li>
+        </ol>
+    </p>
     <script src="https://cdn.bootcss.com/vue/2.1.10/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/vue-router/2.2.0/vue-router.min.js"></script>
     <script src="4.App.js"></script>
