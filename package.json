@@ -1,0 +1,20 @@
+{
+  "name": "vue-router-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:elegance/vue-router-demo.git",
+  "author": "orh <webdevelop@sohu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.1.10",
+    "vue-router": "^2.2.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "css-loader": "^0.26.1",
+    "vue-loader": "^10.3.0",
+    "vue-template-compiler": "^2.1.10"
+  }
+}
